@@ -1,0 +1,49 @@
+\sek{Binomické koeficienty}
+
+\pr Vypočítajte: $\sum_{k\geq0} {n \choose k}\frac{k!}{\left(n+1+k\right)!}$, $n\in \mathbb{N}_0$.
+\ries{Stanek}
+\begin{eqnarray*}
+\sum_{k\geq0} {n \choose k}\frac{k!}{\left(n+1+k\right)!} &=& \sum_{k\geq0} \frac{n!}{k!\left(n-k\right)!}\frac{k!}{\left(n+1+k\right)!} = \sum_{k\geq0}\frac{n!}{\left(n-k\right)!\left(n+1+k\right)!} =\\
+&=& \sum_{k\geq0}\frac{n!}{\left(n-k\right)!\left(n+1+k\right)!}\frac{\left(2n+1\right)!}{\left(2n+1\right)!} = \frac{n!}{\left(2n+1\right)!}\sum_{k\geq0} {2n+1 \choose n-k} =\\
+&=& \frac{n!}{\left(2n+1\right)!}\sum_{k=0}^n {2n+1 \choose k} = \frac{n!}{\left(2n+1\right)!}\left(\frac12 2^{2n+1}\right) = \frac{n!}{\left(2n+1\right)!}2^{2n}
+\end{eqnarray*}
+
+\pr Vypočítajte: $\sum_{k \leq n}{n \choose k}2^{k-n}$, $n \in \mathbb{Z}$.
+\ries{} TODO
+
+\pr Vypočítajte: $\sum_{k \geq n}{k \choose n}2^{n-k}$, $n \in \mathbb{Z}$.
+\ries{Stanek} Ak $n<0$, dolný index v každom kombinačnom čísle je záporný a teda hodnota celej sumy je nula. Ďalej budeme predpokladať, že $n\geq0$.
+\begin{eqnarray*}
+\sum_{k \geq n}{k \choose n}2^{n-k} &=& \sum_{n\leq k}{k-n-k-1 \choose k-n}\left(-1\right)^{k-n}2^{n-k} = \sum_{n\leq k}{-n-1 \choose k-n}\left(-2\right)^{n-k} = \\
+&=& \left |\begin{array}{l}
+l = k-n\\
+k = n+l
+\end{array}\right| = \sum_{n\leq n+l}{-n-1 \choose l+n-n}\left(-2\right)^{n-l-n} = \sum_{0 \leq l} {-n-1\choose l}\left(-2\right)^{-l} = \\
+&=& \sum_{0\leq l}{-n-1 \choose l} \left(-\frac12\right)^l = \left(1 - \frac12\right)^{-n-1} = 2^{n+1}
+\end{eqnarray*}
+
+\pr Vypočítajte: $\sum_k{-\frac12 \choose k}\left(\frac12\right)^k k$.
+\ries{} TODO
+
+\pr Vypočítajte: $\sum_{l\geq 2}\left(-1\right)^l{\lfloor l^m \rfloor \choose m-l}$, $m\in\mathbb{Z}$.
+\ries{} TODO
+
+\pr Vypočítajte: $\sum_{k=0}^{2n}{n \choose k}\frac1{k+2}$, $n\in\mathbb{N}_0$.
+\ries{} TODO
+
+\pr Vypočítajte: $\sum_{k=0}^{n}{n \choose k}\left(-1\right)^k k^2$, $n\in\mathbb{N}_0$.
+\ries{} TODO
+
+\pr Vypočítajte: $\sum_{k=0}^{n}{n+1 \choose k}\left(\frac{n+1}m\right)^k \left(-1\right)^{n+k}$, $n,m\in\mathbb{N}_0$.
+\ries{} TODO
+
+\pr Vypočítajte: $\sum_{k\geq1}\frac{n+1}k{n+1 \choose 2k-1}$, $n\mathbb{N}$.
+\ries{} TODO
+
+\pr Vypočítajte: $\sum_k{n \choose 2n-k}{-n+k \choose k+2n+p}{k-3p \choose 2m+k}\left(-1\right)^k$, $m,n,p\in\mathbb{Z}$, $m\geq n\geq 0$.
+\ries{Stanek}
+\begin{eqnarray*}
+\sum_k{n \choose 2n-k}{-n+k \choose k+2n+p}{k-3p \choose 2m+k}\left(-1\right)^k &=& \left| {n \choose p}{p \choose 2n-k} = {n \choose 2n-k}{-n+k \choose k-2n+p}\right| = \\
+&=& {n \choose p}\sum_k{p \choose 2n-k}{2m+k-k+3p-1 \choose 2m+k} = |\hbox{konvolúcia}|\\
+&=& {n \choose p}{2m+4p-1 \choose 2n+2m}
+\end{eqnarray*}
