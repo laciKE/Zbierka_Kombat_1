@@ -1,0 +1,37 @@
+\documentclass{article}
+%\pagestyle{empty}
+\usepackage[utf8]{inputenc}
+\usepackage{slovak}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{graphicx}
+%\usepackage{picins}
+\setlength\textwidth{180mm}
+\setlength\textheight{240mm}
+\addtolength\oddsidemargin{-30mm}
+\addtolength\topmargin{-30mm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\itemsep}{0pt}
+\newcount\priklad
+\priklad = 0
+\newcount\sekcia
+\sekcia = 0
+\def\pr{\bigskip \advance\priklad by 1 
+%\ifnum \priklad > 1 \bigskip\hrule\medskip \fi 
+{\bf Príklad \number\sekcia.\number\priklad.}\quad}
+\def\ries#1{\smallskip\\{\bf Riešenie: }{\it (#1)}\quad}
+\def\sek#1{\bigskip \advance\sekcia by 1
+\priklad = 0
+\centerline{\Large{\bf Časť \number\sekcia. #1}}\smallskip}
+
+\begin{document}
+
+\centerline{\huge \bf Zbierka úloh z kombinatorickej analýzy}
+\bigskip
+
+\input{example.tex}
+
+\input{binomicke_koeficienty.tex}
+
+\end{document}
