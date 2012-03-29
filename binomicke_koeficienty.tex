@@ -9,7 +9,10 @@
 \end{eqnarray*}
 
 \pr Vypočítajte: $\sum_{k \leq n}{n \choose k}2^{k-n}$, $n \in \mathbb{Z}$.
-\ries{} TODO
+\ries{Laco} Ak $n<0$, potom aj $k<0$ a všetky kombinačné čísla sú nulové, takže aj výsledná suma je nulová. Ak $n=$, tak jedine pre $k=0$ obsahuje suma nenulový člen a je rovná $1$. Ak $n>0$, môžeme použiť binomickú vetu:
+$$
+\sum_{k \leq n}{n \choose k}2^{k-n} = \frac1{2^n} \sum_{k=0}^n{n \choose k}2^k = \frac1{2^n} \left(1+2\right)^n = \left(\frac32\right)^n.
+$$
 
 \pr Vypočítajte: $\sum_{k \geq n}{k \choose n}2^{n-k}$, $n \in \mathbb{Z}$.
 \ries{Stanek} Ak $n<0$, dolný index v každom kombinačnom čísle je záporný a teda hodnota celej sumy je nula. Ďalej budeme predpokladať, že $n\geq0$.
@@ -23,22 +26,28 @@ k = n+l
 \end{eqnarray*}
 
 \pr Vypočítajte: $\sum_k{-\frac12 \choose k}\left(\frac12\right)^k k$.
-\ries{} TODO
+%\ries{} TODO
 
 \pr Vypočítajte: $\sum_{l\geq 2}\left(-1\right)^l{\lfloor l^m \rfloor \choose m-l}$, $m\in\mathbb{Z}$.
-\ries{} TODO
+%\ries{} TODO
 
 \pr Vypočítajte: $\sum_{k=0}^{2n}{n \choose k}\frac1{k+2}$, $n\in\mathbb{N}_0$.
-\ries{} TODO
+%\ries{} TODO
 
 \pr Vypočítajte: $\sum_{k=0}^{n}{n \choose k}\left(-1\right)^k k^2$, $n\in\mathbb{N}_0$.
-\ries{} TODO
+%\ries{} TODO
 
 \pr Vypočítajte: $\sum_{k=0}^{n}{n+1 \choose k}\left(\frac{n+1}m\right)^k \left(-1\right)^{n+k}$, $n,m\in\mathbb{N}_0$.
-\ries{} TODO
+\ries{Laco}
+\begin{eqnarray*}
+\sum_{k=0}^{n}{n+1 \choose k}\left(\frac{n+1}m\right)^k \left(-1\right)^{n+k} &=& \left| x = \frac{n+1}m \right| = \left(-1\right)^n\sum_{k=0}^n{n+1 \choose k}x^k\left(-1\right)^k =\\
+&=& \left(-1\right)^n\left(\sum_{k=0}^{n+1}{n+1 \choose k}x^k\left(-1\right)^k - {n+1 \choose n+1}x^{n+1}\left(-1\right)^{n+1}\right) = \\
+&=& \left(-1\right)^n\left(1-x\right)^{n+1} - \left(-1\right)^{2n+1}x^{n+1} = \left(-1\right)^n\left(1-x\right)^{n+1}+x^{n+1} = \\
+&=& \left(-1\right)^n\left(\frac{m-n-1}m\right)^{n+1}+\left(\frac{n+1}m\right)^{n+1}
+\end{eqnarray*}
 
 \pr Vypočítajte: $\sum_{k\geq1}\frac{n+1}k{n+1 \choose 2k-1}$, $n\mathbb{N}$.
-\ries{} TODO
+%\ries{} TODO
 
 \pr Vypočítajte: $\sum_k{n \choose 2n-k}{-n+k \choose k+2n+p}{k-3p \choose 2m+k}\left(-1\right)^k$, $m,n,p\in\mathbb{Z}$, $m\geq n\geq 0$.
 \ries{Stanek}
@@ -47,3 +56,4 @@ k = n+l
 &=& {n \choose p}\sum_k{p \choose 2n-k}{2m+k-k+3p-1 \choose 2m+k} = |\hbox{konvolúcia}|\\
 &=& {n \choose p}{2m+4p-1 \choose 2n+2m}
 \end{eqnarray*}
+
