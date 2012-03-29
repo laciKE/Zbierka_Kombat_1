@@ -1,15 +1,19 @@
 \documentclass[a4paper]{article}
 %\pagestyle{empty}
 \usepackage[utf8]{inputenc}
-\usepackage{slovak}
-\usepackage{amssymb}
 \usepackage[margin=2.5cm]{geometry}
+\usepackage{amssymb}
+\usepackage[slovak]{babel} %potrebne kvoli spravnemu formatu \today v datetime package
+%\usepackage[T1]{fontenc} %osetruje skarede makcane na d,t,l
+\usepackage{datetime}
+\usepackage{slovak} %asi by sa nemalo sucasne pouzivat s babelom, ale takto mam krajsi font TODO: zistit, ako sa to ma spravne riesit
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt}
 \input{makra.tex}
 \begin{document}
 
-\centerline{\huge \bf Zbierka úloh z kombinatorickej analýzy}
+\centerline{\huge \bf Zbierka úloh z kombinatorickej analýzy (1)}
+\hfill (upravené \today\ o \currenttime)
 \bigskip
 
 \input{example.tex}
