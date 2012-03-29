@@ -1,0 +1,14 @@
+\newcount\priklad
+\priklad = 0
+\newcount\sekcia
+\sekcia = 0
+
+\def\pr{\bigskip \advance\priklad by 1 
+%\ifnum \priklad > 1 \bigskip\hrule\medskip \fi 
+{\bf Príklad \number\sekcia.\number\priklad.}\quad}
+
+\def\ries#1{\smallskip\\{\bf Riešenie: }{\it (#1)}\quad}
+
+\def\nazov#1{\bigskip \advance\sekcia by 1
+\priklad = 0
+\centerline{\Large{\bf Časť \number\sekcia. #1}}\smallskip}
