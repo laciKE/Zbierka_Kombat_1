@@ -1,7 +1,7 @@
 \newcount\priklad
 \priklad = 0
 \newcount\sekcia
-\sekcia = 0
+\sekcia = -1
 
 \def\pr{\bigskip \advance\priklad by 1 
 %\ifnum \priklad > 1 \bigskip\hrule\medskip \fi 
@@ -12,3 +12,4 @@
 \def\nazov#1{\bigskip \advance\sekcia by 1
 \priklad = 0
 \centerline{\Large{\bf Časť \number\sekcia. #1}}\smallskip}
+
