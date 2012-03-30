@@ -32,11 +32,19 @@ k = n+l
 &=& -\frac14 \sum_{k-1}{-\frac32 \choose k-1}\left(\frac12\right)^{k-1} = -\frac14\left(1+\frac12\right)^{-\frac32} = -\frac16 \sqrt{\frac23}
 \end{eqnarray*}
 
-\pr Vypočítajte: $\sum_{l\geq 2}\left(-1\right)^l{\lfloor l^m \rfloor \choose m-l}$, $m\in\mathbb{Z}$.
+\pr Vypočítajte: $\sum_{l\geq 2}\left(-1\right)^l{\lfloor e^m \rfloor \choose m-l}$, $m\in\mathbb{Z}$.
 %\ries{} TODO
 
 \pr Vypočítajte: $\sum_{k=0}^{2n}{n \choose k}\frac1{k+2}$, $n\in\mathbb{N}_0$.
-%\ries{} TODO
+\ries{Stanek}
+\begin{eqnarray*}
+\sum_{k=0}^{2n}{n \choose k}\frac1{k+2} &=& \sum_{k=0}^{2n}{n \choose k}\frac1{k+2} \frac{\left(k+1\right)\left(n+1\right)\left(n+2\right)}{\left(k+1\right)\left(n+1\right)\left(n+2\right)} = \frac1{\left(n+1\right)\left(n+2\right)}\sum_{k=0}^{2n}{n+2 \choose k+2}\left(k+1\right) = \\
+&=& \frac1{\left(n+1\right)\left(n+2\right)}\left(\sum_{k=0}^{2n}{n+2 \choose k+2}\left(k+2\right) - \sum_{k=0}^{2n}{n+2 \choose k+2}\right) = \\
+&=& \frac1{\left(n+1\right)\left(n+2\right)}\left(\left(n+2\right)\sum_{k=0}^{2n}{n+1 \choose k+1}- \sum_{k=0}^{2n}{n+2 \choose k+2}\right) = \\
+&=& \frac1{\left(n+1\right)\left(n+2\right)}\left(\left(n+2\right)\sum_{k=1}^{2n+1}{n+1 \choose k} - \sum_{k=2}^{2n+2}{n+2 \choose k}\right) =\\
+&=& \frac1{\left(n+1\right)\left(n+2\right)}\left(\left(n+2\right)\left(2^{n+1}-{n+1 \choose 0}\right) - \left(2^{n+2} - {n+2 \choose 0} - {n+2 \choose 1}\right)\right) =\\
+&=& \frac{2^{n+1}-1}{n+1} - \frac{2^{n+2} - n - 3}{\left(n+1\right)\left(n+2\right)}
+\end{eqnarray*}
 
 \pr Vypočítajte: $\sum_{k=0}^{n}{n \choose k}\left(-1\right)^k k^2$, $n\in\mathbb{N}_0$.
 \ries{Stanek}
