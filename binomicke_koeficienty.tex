@@ -32,8 +32,13 @@ k = n+l
 &=& -\frac14 \sum_{k-1}{-\frac32 \choose k-1}\left(\frac12\right)^{k-1} = -\frac14\left(1+\frac12\right)^{-\frac32} = -\frac16 \sqrt{\frac23}
 \end{eqnarray*}
 
-\pr Vypočítajte: $\sum_{l\geq 2}\left(-1\right)^l{\lfloor e^m \rfloor \choose m-l}$, $m\in\mathbb{Z}$.
-%\ries{} TODO
+\pr Vypočítajte: $\sum_{l\geq 2}\left(-1\right)^l{\dolna{e^m} \choose m-l}$, $m\in\mathbb{Z}$.
+\ries{Laco} Aby v sume bol aspoň jeden dolný index v ${\dolna{e^m} \choose m-l}$ nezáporný, tak $m\geq2$, inak je hodnota sumy $0$. Pre dané $m\geq2$ označme $\dolna{e^m} = c$, pričom vieme, že $c\geq\dolna{e^2}\geq\dolna{2^2}\geq4$. Zároveň v sume nám stačí uvažovať iba $m-l\geq 0$, teda $2\leq l \leq m$.
+\begin{eqnarray*}
+\sum_{l=2}^m\left(-1\right)^l{c \choose m-l} &=& \left/ k=m - l\right/ = \sum_{k=0}^{m-2}\left(-1\right)^{m-k}{c \choose k} = \left(-1\right)^m\sum_{k=0}^{m-2}\left(-1\right)^k\left({c-1 \choose k-1} + {c-1 \choose k}\right) =\\
+&=& \left(-1\right)^m\left\lbrack{c-1 \choose -1} + {c-1 \choose 0} - {c-1 \choose 0} - \cdots + \left(-1\right)^{m-2}\left({c-1 \choose m-3} + {c-1 \choose m-2}\right) \right\rbrack = \\
+&=& \left(-1\right)^{2m-2}{c-1 \choose m-2} = {\dolna{e^m}-1 \choose m-2}
+\end{eqnarray*}
 
 \pr Vypočítajte: $\sum_{k=0}^{2n}{n \choose k}\frac1{k+2}$, $n\in\mathbb{N}_0$.
 \ries{Stanek}
