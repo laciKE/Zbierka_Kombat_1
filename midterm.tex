@@ -1,0 +1,32 @@
+\nazov{Midterm 12.4.2012}
+\pr Vypočítajte:  $\sum_{1\leq k\leq n} \sum_{1\leq j\leq k}{j-k \choose j}$.
+\ries{Stanek} Ak je $n\leq 0$, výsledok je $0$. Ak $n>$, potom
+$$
+\sum_{1\leq k\leq n} \sum_{1\leq j\leq k}{j-k \choose j} = \sum_{1\leq k\leq n} \left( {k - k + 1 \choose k} - {0 - k + 1 \choose 0}\right) = \sum_{1\leq k\leq n} {1 \choose k} - \sum_{1\leq k\leq n}{1-k \choose 0} = 1 -n
+$$
+
+\pr Vypočítajte: $\sum_{0\leq k \leq n^2} \dolna{\sqrt k} \cdot \horna{\sqrt k}, n\in\mathbb{N}$.
+
+\pr Vypočítajte: $\sum_{1\leq k \leq n} H_k^{\left(2\right)}k, n\in\mathbb{N}$.
+
+\pr Vyriešte rekurentný vzťah
+\begin{eqnarray*}
+g_0 &=& 1\\
+2g_n &=& \alpha g_{n-1} + \frac{n}2,\qquad n\in\mathbb{N}, \alpha \ne 2
+\end{eqnarray*}
+
+\pr Vypočítajte: $\sum_{k\geq -1} \left(-1\right)^{k+1}{n \choose 2012 - k}, n\in\mathbb{Z}$.
+\ries{Stanek}  
+\begin{eqnarray*}
+\sum_{k\geq -1} \left(-1\right)^{k+1}{n \choose 2012 - k} &=& \left/
+\begin{array}{l}
+2012 - k = l\\
+k = 2012 - l
+\end{array}
+\right/ = \sum_{2012-l\geq -1}\left(-1\right)^{2012 - l + 1}{n \choose l} = -\sum_{l\leq 2013} \left(-1\right)^l{n \choose l} =\\
+ &=& -\sum_{l\leq 2013}{l - n - 1 \choose l} = -{2013 - n - 1 + 1 \choose 2013} = -{2013 - n\choose 2013}
+\end{eqnarray*}
+\ineries{Stanek}
+$$
+\sum_{k\geq -1} \left(-1\right)^{k+1}{n \choose 2012 - k} = \sum_{k\geq -1} {-1 \choose k+1}{n \choose 2012 - k} = \left/ \hbox{konvolúcia}\right/ = {n-1 \choose 2013}
+$$
